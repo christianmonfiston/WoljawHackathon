@@ -19,6 +19,7 @@
 #include "Blueprint/UserWidget.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "CollisionQueryParams.h"
+#include "GameFramework/FloatingPawnMovement.h"
 #include "EnhancedInputSubsystems.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "Materials/MaterialInterface.h"
@@ -91,14 +92,20 @@ public:
 
 
 	// Player components
-	UPROPERTY(EditAnywhere, Category = "Player Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
 	UStaticMeshComponent* PrimaryMesh;
 
-	UPROPERTY(EditAnywhere, Category = "Player Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
 	UStaticMeshComponent* SecondaryMesh;
 
-	UPROPERTY(EditAnywhere, Category = "Player Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
 	UCameraComponent* PlayerCamera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
+	USpringArmComponent* SpringArmComponent;
+
+	
+
 	// Weapon properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
 	float WeaponRange;
@@ -134,6 +141,23 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
 	USceneComponent* ProjectileMuzzleFlashOffset;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+	USceneComponent* ProjectileSpawnLocation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
+	UCapsuleComponent* MainComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
+	UCapsuleComponent* MainCapsule;
+
+
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
+	UCapsuleComponent* SecondaryCapsule;
+
+
+
+
 
 	// Weapon mode
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
@@ -172,6 +196,21 @@ public:
 
 UFUNCTION(BlueprintCallable)
 	void DisplayPlayerHUD(); 
+
+
+
+//Firing Functions
+UFUNCTION(BlueprintCallable)
+	void StartFire(); 
+
+
+UFUNCTION(BlueprintCallable)
+	void Fire(); 
+
+UFUNCTION(BlueprintCallable)
+	void StopFire(); 
+
+
 
 
 

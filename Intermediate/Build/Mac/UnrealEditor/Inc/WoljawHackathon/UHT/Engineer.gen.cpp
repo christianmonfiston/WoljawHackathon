@@ -13,8 +13,10 @@ void EmptyLinkFunctionForGeneratedCodeEngineer() {}
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_APawn();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
@@ -53,12 +55,108 @@ DEFINE_FUNCTION(AEngineer::execDisplayPlayerHUD)
 }
 // End Class AEngineer Function DisplayPlayerHUD
 
+// Begin Class AEngineer Function Fire
+struct Z_Construct_UFunction_AEngineer_Fire_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_Fire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "Fire", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_Fire_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_Fire_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_Fire()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_Fire_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execFire)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->Fire();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function Fire
+
+// Begin Class AEngineer Function StartFire
+struct Z_Construct_UFunction_AEngineer_StartFire_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//Firing Functions\n" },
+#endif
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Firing Functions" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_StartFire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "StartFire", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_StartFire_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_StartFire_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_StartFire()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_StartFire_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execStartFire)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartFire();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function StartFire
+
+// Begin Class AEngineer Function StopFire
+struct Z_Construct_UFunction_AEngineer_StopFire_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_StopFire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "StopFire", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_StopFire_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_StopFire_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_StopFire()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_StopFire_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execStopFire)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StopFire();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function StopFire
+
 // Begin Class AEngineer
 void AEngineer::StaticRegisterNativesAEngineer()
 {
 	UClass* Class = AEngineer::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "DisplayPlayerHUD", &AEngineer::execDisplayPlayerHUD },
+		{ "Fire", &AEngineer::execFire },
+		{ "StartFire", &AEngineer::execStartFire },
+		{ "StopFire", &AEngineer::execStopFire },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -209,6 +307,11 @@ struct Z_Construct_UClass_AEngineer_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Engineer.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpringArmComponent_MetaData[] = {
+		{ "Category", "Player Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WeaponRange_MetaData[] = {
 		{ "Category", "Weapon Properties" },
 #if !UE_BUILD_SHIPPING
@@ -270,6 +373,26 @@ struct Z_Construct_UClass_AEngineer_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileMuzzleFlashOffset_MetaData[] = {
 		{ "Category", "Weapon Properties" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileSpawnLocation_MetaData[] = {
+		{ "Category", "Weapon Properties" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MainComponent_MetaData[] = {
+		{ "Category", "Player Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MainCapsule_MetaData[] = {
+		{ "Category", "Player Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SecondaryCapsule_MetaData[] = {
+		{ "Category", "Player Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Engineer.h" },
 	};
@@ -339,6 +462,7 @@ struct Z_Construct_UClass_AEngineer_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PrimaryMesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SecondaryMesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerCamera;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringArmComponent;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_WeaponRange;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_WeaponDamage;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ProjectileDamage;
@@ -350,6 +474,10 @@ struct Z_Construct_UClass_AEngineer_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileFireSound;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WeaponMuzzleFlashOffset;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileMuzzleFlashOffset;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileSpawnLocation;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MainComponent;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MainCapsule;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_SecondaryCapsule;
 	static void NewProp_bIsAutomatic_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsAutomatic;
 	static void NewProp_bIsReloading_SetBit(void* Obj);
@@ -363,6 +491,9 @@ struct Z_Construct_UClass_AEngineer_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEngineer_DisplayPlayerHUD, "DisplayPlayerHUD" }, // 462572277
+		{ &Z_Construct_UFunction_AEngineer_Fire, "Fire" }, // 596899649
+		{ &Z_Construct_UFunction_AEngineer_StartFire, "StartFire" }, // 862932592
+		{ &Z_Construct_UFunction_AEngineer_StopFire, "StopFire" }, // 322629447
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -384,9 +515,10 @@ const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_AEngineer_Statics
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_MaxHealth = { "MaxHealth", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, MaxHealth), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHealth_MetaData), NewProp_MaxHealth_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_CurrentShield = { "CurrentShield", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, CurrentShield), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentShield_MetaData), NewProp_CurrentShield_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_MaxShield = { "MaxShield", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, MaxShield), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxShield_MetaData), NewProp_MaxShield_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_PrimaryMesh = { "PrimaryMesh", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, PrimaryMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PrimaryMesh_MetaData), NewProp_PrimaryMesh_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_SecondaryMesh = { "SecondaryMesh", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, SecondaryMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondaryMesh_MetaData), NewProp_SecondaryMesh_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_PlayerCamera = { "PlayerCamera", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, PlayerCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerCamera_MetaData), NewProp_PlayerCamera_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_PrimaryMesh = { "PrimaryMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, PrimaryMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PrimaryMesh_MetaData), NewProp_PrimaryMesh_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_SecondaryMesh = { "SecondaryMesh", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, SecondaryMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondaryMesh_MetaData), NewProp_SecondaryMesh_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_PlayerCamera = { "PlayerCamera", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, PlayerCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerCamera_MetaData), NewProp_PlayerCamera_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_SpringArmComponent = { "SpringArmComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, SpringArmComponent), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpringArmComponent_MetaData), NewProp_SpringArmComponent_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponRange = { "WeaponRange", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, WeaponRange), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponRange_MetaData), NewProp_WeaponRange_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponDamage = { "WeaponDamage", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, WeaponDamage), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponDamage_MetaData), NewProp_WeaponDamage_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileDamage = { "ProjectileDamage", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileDamage), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileDamage_MetaData), NewProp_ProjectileDamage_MetaData) };
@@ -398,6 +530,10 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Stat
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileFireSound = { "ProjectileFireSound", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileFireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileFireSound_MetaData), NewProp_ProjectileFireSound_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponMuzzleFlashOffset = { "WeaponMuzzleFlashOffset", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, WeaponMuzzleFlashOffset), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponMuzzleFlashOffset_MetaData), NewProp_WeaponMuzzleFlashOffset_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileMuzzleFlashOffset = { "ProjectileMuzzleFlashOffset", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileMuzzleFlashOffset), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileMuzzleFlashOffset_MetaData), NewProp_ProjectileMuzzleFlashOffset_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileSpawnLocation = { "ProjectileSpawnLocation", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileSpawnLocation), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileSpawnLocation_MetaData), NewProp_ProjectileSpawnLocation_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_MainComponent = { "MainComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, MainComponent), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MainComponent_MetaData), NewProp_MainComponent_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_MainCapsule = { "MainCapsule", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, MainCapsule), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MainCapsule_MetaData), NewProp_MainCapsule_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_SecondaryCapsule = { "SecondaryCapsule", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, SecondaryCapsule), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SecondaryCapsule_MetaData), NewProp_SecondaryCapsule_MetaData) };
 void Z_Construct_UClass_AEngineer_Statics::NewProp_bIsAutomatic_SetBit(void* Obj)
 {
 	((AEngineer*)Obj)->bIsAutomatic = 1;
@@ -431,6 +567,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEngineer
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_PrimaryMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_SecondaryMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_PlayerCamera,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_SpringArmComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponRange,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponDamage,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileDamage,
@@ -442,6 +579,10 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEngineer
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileFireSound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponMuzzleFlashOffset,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileMuzzleFlashOffset,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileSpawnLocation,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_MainComponent,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_MainCapsule,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_SecondaryCapsule,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_bIsAutomatic,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_bIsReloading,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_CurrentAmmo,
@@ -491,10 +632,10 @@ AEngineer::~AEngineer() {}
 struct Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 3728192698U) },
+		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 2978668788U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_3560287770(TEXT("/Script/WoljawHackathon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_3057830531(TEXT("/Script/WoljawHackathon"),
 	Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

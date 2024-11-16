@@ -17,22 +17,58 @@ AEngineer::AEngineer()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	//Set Primary Mesh
-	PrimaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Primary Mesh")); 
-	RootComponent = PrimaryMesh; 
+/// Root Component (base for the entire actor)
+    RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
 
-	//Create Secondary Mesh Probably gonna be the weels
-	SecondaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Secondary Mesh")); 
-	SecondaryMesh->SetupAttachment(PrimaryMesh); 
+	MainComponent =  CreateDefaultSubobject<UCapsuleComponent>(TEXT("Main  Component"));
+	RootComponent = MainComponent; 
 
-	WeaponMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleFlash OffSet")); 
-	ProjectileMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Muzzle Flash")); 
 
-	//HUD that the enginner will see 
-	HUD = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), UMG_PlayerHUD); 
+	MainCapsule =  CreateDefaultSubobject<UCapsuleComponent>(TEXT("Main Capsule Component"));
+	MainCapsule->SetupAttachment(MainComponent);
 
-	//Create Camera Component
-	PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera")); 
+	SecondaryCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Secondary Capsule"));
+	SecondaryCapsule->SetupAttachment(MainCapsule);
+
+    // Primary Mesh (rotates based on input)
+    PrimaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Primary Mesh"));
+    PrimaryMesh->SetupAttachment(SecondaryCapsule);
+
+    // Secondary Mesh (wheels, attached to primary mesh)
+    SecondaryMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Secondary Mesh"));
+    SecondaryMesh->SetupAttachment(SecondaryCapsule);
+
+    // Weapon offsets (optional for muzzle flash and projectiles)
+    WeaponMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleFlash Offset"));
+    WeaponMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
+
+    ProjectileMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Muzzle Flash"));
+    ProjectileMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
+
+    // Spring Arm Component (for smooth camera follow)
+    //SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm Component"));
+    //SpringArmComponent->SetupAttachment(PrimaryMesh); // Attach to the Primary Mesh
+   // SpringArmComponent->TargetArmLength = 300.0f;     // Distance from the mesh
+    //SpringArmComponent->bEnableCameraLag = true;      // Smooth lag effect
+    //SpringArmComponent->CameraLagSpeed = 3.0f;
+
+    // Camera Component
+    //PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
+    //PlayerCamera->SetupAttachment(SpringArmComponent); // Attach to the spring arm
+    //PlayerCamera->bUsePawnControlRotation = true;      // Allow camera rotation with input
+
+
+	ProjectileSpawnLocation = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Location"));
+
+
+   
+    // HUD setup (you may want to delay this to BeginPlay)
+    HUD = CreateWidget<UUserWidget>(Cast<APlayerController>(GetController()), UMG_PlayerHUD);
+
+
+
+
+
 
 	
 
@@ -122,12 +158,48 @@ void AEngineer::Look(const FInputActionValue& Value)
 {
     const FVector2D LookAxisVector = Value.Get<FVector2D>();
 
+	FRotator Rotation = FRotator::ZeroRotator;
+
+
     if (Controller != nullptr)
     {
-        AddControllerYawInput(LookAxisVector.X);
-        AddControllerPitchInput(LookAxisVector.Y);
+        AddControllerYawInput(LookAxisVector.X * 50.0f * UGameplayStatics::GetWorldDeltaSeconds(this));
+        //AddControllerPitchInput(LookAxisVector.Y);
     }
 }
+
+
+void AEngineer::StartFire()
+{
+
+Fire(); 
+DebugMessage("Firing Works"); 
+
+if(bIsAutomatic)
+{
+	GetWorldTimerManager().SetTimer(WeaponFireRateTimerHandle, this, &AEngineer::Fire, WeaponFireRate, true); 
+	//DebugMessage("Firing"); 
+
+}
+}
+
+void AEngineer::StopFire()
+{
+
+	GetWorldTimerManager().ClearTimer(WeaponFireRateTimerHandle); 
+}
+
+void AEngineer::Fire()
+{
+
+	DebugMessage("Firing"); 
+	if(WeaponFireSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, WeaponFireSound, GetActorLocation()); 
+	}
+}
+
+
 
 
 // Called to bind functionality to input
@@ -148,6 +220,9 @@ void AEngineer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
        
         EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AEngineer::Move);
         EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AEngineer::Look);
+		EnhancedInputComponent->BindAction(StartFireAction, ETriggerEvent::Started, this, &AEngineer::StartFire);
+		EnhancedInputComponent->BindAction(StopFireAction, ETriggerEvent::Completed, this, &AEngineer::StopFire);
+		
        
 
 

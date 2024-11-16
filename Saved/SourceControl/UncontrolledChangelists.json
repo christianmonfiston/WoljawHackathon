@@ -5,14 +5,10 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/9/9E/8Z9DCJW4C7JC2VRH4TPEDW.uasset",
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Levels/Level0.umap",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/1/9X/06BQCPXCH14GSWRAIH6NZX.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/FirstPerson/Input/IMC_Default.uasset",
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Player/BP_Engineer.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/UI/WBP_HUD.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/FirstPerson/Blueprints/BP_FirstPersonGameMode.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/TestGameMode.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Player/Input/IMC_Main.uasset"
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Player/Actions/IA_StopFire.uasset"
 			]
 		}
 	]
