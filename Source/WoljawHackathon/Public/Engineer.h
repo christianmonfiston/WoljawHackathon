@@ -190,6 +190,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void StopFire();
 
+
+
+    UFUNCTION(BlueprintCallable)
+    void StartFireProjectile();
+
+    UFUNCTION(BlueprintCallable)
+    void FireProjectile(); 
+
+    UFUNCTION(BlueprintCallable)
+    void StopFireProjectile();
+
 protected:
     virtual void BeginPlay() override;
 

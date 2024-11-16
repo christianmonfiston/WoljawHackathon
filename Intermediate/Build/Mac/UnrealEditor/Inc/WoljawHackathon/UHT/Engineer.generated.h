@@ -15,6 +15,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define WOLJAWHACKATHON_Engineer_generated_h
 
 #define FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execStopFireProjectile); \
+	DECLARE_FUNCTION(execFireProjectile); \
+	DECLARE_FUNCTION(execStartFireProjectile); \
 	DECLARE_FUNCTION(execStopFire); \
 	DECLARE_FUNCTION(execFire); \
 	DECLARE_FUNCTION(execStartFire); \

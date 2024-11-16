@@ -90,6 +90,35 @@ DEFINE_FUNCTION(AEngineer::execFire)
 }
 // End Class AEngineer Function Fire
 
+// Begin Class AEngineer Function FireProjectile
+struct Z_Construct_UFunction_AEngineer_FireProjectile_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_FireProjectile_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "FireProjectile", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_FireProjectile_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_FireProjectile_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_FireProjectile()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_FireProjectile_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execFireProjectile)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->FireProjectile();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function FireProjectile
+
 // Begin Class AEngineer Function StartFire
 struct Z_Construct_UFunction_AEngineer_StartFire_Statics
 {
@@ -118,6 +147,35 @@ DEFINE_FUNCTION(AEngineer::execStartFire)
 	P_NATIVE_END;
 }
 // End Class AEngineer Function StartFire
+
+// Begin Class AEngineer Function StartFireProjectile
+struct Z_Construct_UFunction_AEngineer_StartFireProjectile_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_StartFireProjectile_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "StartFireProjectile", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_StartFireProjectile_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_StartFireProjectile_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_StartFireProjectile()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_StartFireProjectile_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execStartFireProjectile)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartFireProjectile();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function StartFireProjectile
 
 // Begin Class AEngineer Function StopFire
 struct Z_Construct_UFunction_AEngineer_StopFire_Statics
@@ -148,6 +206,35 @@ DEFINE_FUNCTION(AEngineer::execStopFire)
 }
 // End Class AEngineer Function StopFire
 
+// Begin Class AEngineer Function StopFireProjectile
+struct Z_Construct_UFunction_AEngineer_StopFireProjectile_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_StopFireProjectile_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "StopFireProjectile", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_StopFireProjectile_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_StopFireProjectile_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_StopFireProjectile()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_StopFireProjectile_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execStopFireProjectile)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StopFireProjectile();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function StopFireProjectile
+
 // Begin Class AEngineer
 void AEngineer::StaticRegisterNativesAEngineer()
 {
@@ -155,8 +242,11 @@ void AEngineer::StaticRegisterNativesAEngineer()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "DisplayPlayerHUD", &AEngineer::execDisplayPlayerHUD },
 		{ "Fire", &AEngineer::execFire },
+		{ "FireProjectile", &AEngineer::execFireProjectile },
 		{ "StartFire", &AEngineer::execStartFire },
+		{ "StartFireProjectile", &AEngineer::execStartFireProjectile },
 		{ "StopFire", &AEngineer::execStopFire },
+		{ "StopFireProjectile", &AEngineer::execStopFireProjectile },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -462,8 +552,11 @@ struct Z_Construct_UClass_AEngineer_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEngineer_DisplayPlayerHUD, "DisplayPlayerHUD" }, // 1165841472
 		{ &Z_Construct_UFunction_AEngineer_Fire, "Fire" }, // 596899649
+		{ &Z_Construct_UFunction_AEngineer_FireProjectile, "FireProjectile" }, // 2893717471
 		{ &Z_Construct_UFunction_AEngineer_StartFire, "StartFire" }, // 3286644511
+		{ &Z_Construct_UFunction_AEngineer_StartFireProjectile, "StartFireProjectile" }, // 2361250432
 		{ &Z_Construct_UFunction_AEngineer_StopFire, "StopFire" }, // 322629447
+		{ &Z_Construct_UFunction_AEngineer_StopFireProjectile, "StopFireProjectile" }, // 4179076354
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -612,10 +705,10 @@ AEngineer::~AEngineer() {}
 struct Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 226784603U) },
+		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 2867320085U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_3535976163(TEXT("/Script/WoljawHackathon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_2752710811(TEXT("/Script/WoljawHackathon"),
 	Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -192,7 +192,7 @@ void AEngineer::Look(const FInputActionValue& Value)
 void AEngineer::StartFire()
 {
     Fire();
-    DebugMessage("Firing Works");
+    DebugMessage("Firing Weapon Started");
 
     if (bIsAutomatic)
     {
@@ -207,7 +207,7 @@ void AEngineer::StopFire()
 
 void AEngineer::Fire()
 {
-    DebugMessage("Firing");
+    DebugMessage("Firing working yay");
     if (WeaponFireSound)
     {
         UGameplayStatics::PlaySoundAtLocation(this, WeaponFireSound, GetActorLocation());
@@ -243,6 +243,37 @@ void AEngineer::Fire()
     }
 }
 
+void AEngineer::StartFireProjectile()
+{
+
+    FireProjectile(); 
+    DebugMessage("Firing Projectile Started");
+
+    if (bIsAutomatic)
+    {
+        GetWorldTimerManager().SetTimer(ProjectileFireRateTimerHandle, this, &AEngineer::FireProjectile, ProjectileFireRate, true);
+    }}
+
+
+void AEngineer::FireProjectile()
+{
+   
+   DebugMessage("Firing Projectile Happening");
+
+
+   if(ProjectileFireSound)
+   {
+        UGameplayStatics::PlaySoundAtLocation(this, ProjectileFireSound, ProjectileSpawnLocation->GetComponentLocation());
+   }
+
+}
+
+void AEngineer::StopFireProjectile()
+{
+        GetWorldTimerManager().ClearTimer(ProjectileFireRateTimerHandle);
+
+}
+
 void AEngineer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -261,5 +292,7 @@ void AEngineer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
         EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AEngineer::Look);
         EnhancedInputComponent->BindAction(StartFireAction, ETriggerEvent::Started, this, &AEngineer::StartFire);
         EnhancedInputComponent->BindAction(StopFireAction, ETriggerEvent::Completed, this, &AEngineer::StopFire);
+        EnhancedInputComponent->BindAction(StartFireProjectileAction, ETriggerEvent::Started, this, &AEngineer::StartFireProjectile);
+        EnhancedInputComponent->BindAction(StopFireProjectileAction, ETriggerEvent::Completed, this, &AEngineer::StopFireProjectile);
     }
 }
