@@ -58,7 +58,7 @@ AEngineer::AEngineer()
     ProjectileDamage = 40.0f;
     WeaponDamage = 20.0f;
     WeaponFireRate = 0.1f;
-    ProjectileFireRate = 0.5f;
+    ProjectileFireRate = 1.0f;
     WeaponDelayDuration = WeaponFireRate;
     ProjectileDelayDuration = ProjectileFireRate;
     bIsAutomatic = true;
