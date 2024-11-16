@@ -27,7 +27,7 @@ struct Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADefaultGameMode, nullptr, "CollectHeartFragment", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADefaultGameMode, nullptr, "CollectHeartFragment", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -56,7 +56,7 @@ struct Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADefaultGameMode, nullptr, "DecreaseMatchTime", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADefaultGameMode, nullptr, "DecreaseMatchTime", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -84,13 +84,7 @@ struct Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "//function to end the match\n" },
-#endif
 		{ "ModuleRelativePath", "Public/DefaultGameMode.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "function to end the match" },
-#endif
 	};
 #endif // WITH_METADATA
 	static void NewProp_bPlayerWon_SetBit(void* Obj);
@@ -107,7 +101,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADefau
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::NewProp_bPlayerWon,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADefaultGameMode, nullptr, "HandleMatchEnd", nullptr, nullptr, Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::DefaultGameMode_eventHandleMatchEnd_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADefaultGameMode, nullptr, "HandleMatchEnd", nullptr, nullptr, Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::PropPointers), sizeof(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::DefaultGameMode_eventHandleMatchEnd_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd_Statics::DefaultGameMode_eventHandleMatchEnd_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd()
 {
@@ -148,9 +142,6 @@ struct Z_Construct_UClass_ADefaultGameMode_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
-#endif
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering HLOD WorldPartition DataLayers Transformation" },
 		{ "IncludePath", "DefaultGameMode.h" },
 		{ "ModuleRelativePath", "Public/DefaultGameMode.h" },
@@ -176,9 +167,9 @@ struct Z_Construct_UClass_ADefaultGameMode_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment, "CollectHeartFragment" }, // 2843172809
-		{ &Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime, "DecreaseMatchTime" }, // 3391396648
-		{ &Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd, "HandleMatchEnd" }, // 722148789
+		{ &Z_Construct_UFunction_ADefaultGameMode_CollectHeartFragment, "CollectHeartFragment" }, // 2101235011
+		{ &Z_Construct_UFunction_ADefaultGameMode_DecreaseMatchTime, "DecreaseMatchTime" }, // 459812475
+		{ &Z_Construct_UFunction_ADefaultGameMode_HandleMatchEnd, "HandleMatchEnd" }, // 266877295
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -186,8 +177,8 @@ struct Z_Construct_UClass_ADefaultGameMode_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADefaultGameMode_Statics::NewProp_MatchDuration = { "MatchDuration", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefaultGameMode, MatchDuration), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MatchDuration_MetaData), NewProp_MatchDuration_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ADefaultGameMode_Statics::NewProp_MaxHeartFragments = { "MaxHeartFragments", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefaultGameMode, MaxHeartFragments), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHeartFragments_MetaData), NewProp_MaxHeartFragments_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADefaultGameMode_Statics::NewProp_MatchDuration = { "MatchDuration", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefaultGameMode, MatchDuration), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MatchDuration_MetaData), NewProp_MatchDuration_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ADefaultGameMode_Statics::NewProp_MaxHeartFragments = { "MaxHeartFragments", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADefaultGameMode, MaxHeartFragments), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxHeartFragments_MetaData), NewProp_MaxHeartFragments_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADefaultGameMode_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefaultGameMode_Statics::NewProp_MatchDuration,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADefaultGameMode_Statics::NewProp_MaxHeartFragments,
@@ -233,10 +224,10 @@ ADefaultGameMode::~ADefaultGameMode() {}
 struct Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADefaultGameMode, ADefaultGameMode::StaticClass, TEXT("ADefaultGameMode"), &Z_Registration_Info_UClass_ADefaultGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADefaultGameMode), 2202914805U) },
+		{ Z_Construct_UClass_ADefaultGameMode, ADefaultGameMode::StaticClass, TEXT("ADefaultGameMode"), &Z_Registration_Info_UClass_ADefaultGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADefaultGameMode), 1997807644U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_422548571(TEXT("/Script/WoljawHackathon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_3007454595(TEXT("/Script/WoljawHackathon"),
 	Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

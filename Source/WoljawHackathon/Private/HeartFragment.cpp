@@ -53,8 +53,19 @@ void AHeartFragment::OnSphereBeginOverlap(UPrimitiveComponent* OverlappedCompone
 		UGameplayStatics::PlaySoundAtLocation(this, CollectSound, GetActorLocation());
 	}
 
+ if(OtherActor && OtherActor->IsA(AEngineer::StaticClass()))  // Check if it's the player
+    {
+        // Notify the engineer that they've collected a heart fragment
+        AEngineer* Engineer = Cast<AEngineer>(OtherActor);
+        if (Engineer)
+        {
+            Engineer->CollectHeartFragment(); 
+        }
+
+        Destroy();
+    }
 	
-	Destroy();
+	
    
 }
 

@@ -9,6 +9,7 @@
 /**
  * 
  */
+class AEngineer;
 UCLASS()
 class WOLJAWHACKATHON_API ADefaultGameMode : public AGameMode
 {
@@ -17,6 +18,15 @@ class WOLJAWHACKATHON_API ADefaultGameMode : public AGameMode
 protected:
 	
 	//timer handle for match time
+	
+
+//function to end the match
+
+	
+
+public:
+	ADefaultGameMode();
+
 	FTimerHandle MatchTimerHandle;
 
 	//match duration variable
@@ -31,7 +41,7 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Heart Fragment")
 	void CollectHeartFragment();
 
-//function to end the match
+	AEngineer* PlayerEngineer;
 
 	UFUNCTION()
 	void HandleMatchEnd(bool bPlayerWon);
@@ -42,6 +52,4 @@ protected:
 	// Start the match timer
 	virtual void BeginPlay() override;
 
-public:
-	ADefaultGameMode();
 };

@@ -16,6 +16,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
+#include "GameFramework/GameMode.h"
 #include "Blueprint/UserWidget.h"
 #include "Projectile.h"
 #include "Camera/PlayerCameraManager.h"
@@ -25,6 +26,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "Materials/MaterialInterface.h"
+#include "DefaultGameMode.h"
 #include "Sound/SoundBase.h"
 #include "Components/SceneComponent.h"
 #include "Engineer.generated.h"
@@ -195,6 +197,12 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void StopFire();
+
+    UFUNCTION(BlueprintCallable)
+    void CollectHeartFragment(); 
+
+
+    
 
 
 

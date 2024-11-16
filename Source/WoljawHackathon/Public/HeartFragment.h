@@ -8,6 +8,7 @@
 #include "Components/SphereComponent.h"  
 #include "Components/PrimitiveComponent.h"  
 #include "Engineer.h"
+#include "GameFramework/GameMode.h"
 #include "Sound/SoundBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "HeartFragment.generated.h"

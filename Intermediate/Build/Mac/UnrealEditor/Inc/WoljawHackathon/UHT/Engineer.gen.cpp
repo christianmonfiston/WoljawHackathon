@@ -27,6 +27,35 @@ WOLJAWHACKATHON_API UClass* Z_Construct_UClass_AEngineer_NoRegister();
 WOLJAWHACKATHON_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 // End Cross Module References
 
+// Begin Class AEngineer Function CollectHeartFragment
+struct Z_Construct_UFunction_AEngineer_CollectHeartFragment_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEngineer_CollectHeartFragment_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEngineer, nullptr, "CollectHeartFragment", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEngineer_CollectHeartFragment_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEngineer_CollectHeartFragment_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEngineer_CollectHeartFragment()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEngineer_CollectHeartFragment_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEngineer::execCollectHeartFragment)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->CollectHeartFragment();
+	P_NATIVE_END;
+}
+// End Class AEngineer Function CollectHeartFragment
+
 // Begin Class AEngineer Function DisplayPlayerHUD
 struct Z_Construct_UFunction_AEngineer_DisplayPlayerHUD_Statics
 {
@@ -241,6 +270,7 @@ void AEngineer::StaticRegisterNativesAEngineer()
 {
 	UClass* Class = AEngineer::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "CollectHeartFragment", &AEngineer::execCollectHeartFragment },
 		{ "DisplayPlayerHUD", &AEngineer::execDisplayPlayerHUD },
 		{ "Fire", &AEngineer::execFire },
 		{ "FireProjectile", &AEngineer::execFireProjectile },
@@ -556,6 +586,7 @@ struct Z_Construct_UClass_AEngineer_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AEngineer_CollectHeartFragment, "CollectHeartFragment" }, // 3728525254
 		{ &Z_Construct_UFunction_AEngineer_DisplayPlayerHUD, "DisplayPlayerHUD" }, // 1165841472
 		{ &Z_Construct_UFunction_AEngineer_Fire, "Fire" }, // 596899649
 		{ &Z_Construct_UFunction_AEngineer_FireProjectile, "FireProjectile" }, // 2893717471
@@ -713,10 +744,10 @@ AEngineer::~AEngineer() {}
 struct Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 212417758U) },
+		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 3664412995U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_1784785204(TEXT("/Script/WoljawHackathon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_1846512242(TEXT("/Script/WoljawHackathon"),
 	Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

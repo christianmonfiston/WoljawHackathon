@@ -1,6 +1,7 @@
 #include "DefaultGameMode.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "Engineer.h"
 #include "Engine/World.h"
 
 // Constructor to initialize default values
@@ -16,6 +17,9 @@ void ADefaultGameMode::BeginPlay()
 
 
 	GetWorldTimerManager().SetTimer(MatchTimerHandle, this, &ADefaultGameMode::DecreaseMatchTime, 1.0f, true);
+
+    PlayerEngineer = Cast<AEngineer>(UGameplayStatics::GetPlayerPawn(this, 0));
+
 
 }
 

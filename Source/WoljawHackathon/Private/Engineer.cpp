@@ -1,5 +1,6 @@
 // Engineer.cpp
 #include "Engineer.h"
+#include "DefaultGameMode.h"
 
 void DebugMessage(const FString& message)
 {
@@ -291,6 +292,20 @@ void AEngineer::StopFireProjectile()
 {
         GetWorldTimerManager().ClearTimer(ProjectileFireRateTimerHandle);
 
+}
+
+void AEngineer::CollectHeartFragment()
+{
+   
+    ADefaultGameMode* GameMode = Cast<ADefaultGameMode>(GetWorld()->GetAuthGameMode());
+    if (GameMode)
+    {
+        GameMode->CollectHeartFragment(); 
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Failed to cast GameMode!"));
+    }
 }
 
 void AEngineer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
