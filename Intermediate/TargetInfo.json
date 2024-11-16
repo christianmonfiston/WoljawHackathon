@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "WoljawHackathon",
-			"Path": "..\\Source\\WoljawHackathon.Target.cs",
+			"Path": "../Source/WoljawHackathon.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "WoljawHackathonEditor",
-			"Path": "..\\Source\\WoljawHackathonEditor.Target.cs",
+			"Path": "../Source/WoljawHackathonEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

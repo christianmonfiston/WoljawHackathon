@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeWoljawHackathon_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xC65FA8FC,
+				0x6551641B,
 				0xE1EB5707,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeWoljawHackathon_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_WoljawHackathon.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_WoljawHackathon(Z_Construct_UPackage__Script_WoljawHackathon, TEXT("/Script/WoljawHackathon"), Z_Registration_Info_UPackage__Script_WoljawHackathon, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC65FA8FC, 0xE1EB5707));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_WoljawHackathon(Z_Construct_UPackage__Script_WoljawHackathon, TEXT("/Script/WoljawHackathon"), Z_Registration_Info_UPackage__Script_WoljawHackathon, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6551641B, 0xE1EB5707));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
