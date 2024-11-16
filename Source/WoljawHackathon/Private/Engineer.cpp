@@ -40,7 +40,7 @@ AEngineer::AEngineer()
 
     // Weapon offsets (optional for muzzle flash and projectiles)
     WeaponMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleFlash Offset"));
-    WeaponMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
+    WeaponMuzzleFlashOffset->SetupAttachment(MainCapsule);
 
     ProjectileMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Muzzle Flash"));
     ProjectileMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
@@ -197,6 +197,62 @@ void AEngineer::Fire()
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, WeaponFireSound, GetActorLocation()); 
 	}
+
+
+
+	//hit Result When We hit something
+	FHitResult HitResult; 
+
+	FVector StartTrace = WeaponMuzzleFlashOffset->GetForwardVector(); 
+	FVector EndTrace = StartTrace *  WeaponRange; 
+
+	//Query Params Settings for our collsions
+
+	FCollisionQueryParams QueryParams(SCENE_QUERY_STAT(WeaponTrace)); //Trace for debug
+	QueryParams.TraceTag = FName("WeaponTrace");// thsi is for debuuging
+	QueryParams.AddIgnoredActor(this); 
+
+	QueryParams.bTraceComplex = true; //for precisise collsion 
+	QueryParams.bReturnPhysicalMaterial = true; //for when a spectif material such as wood or metal has been hit
+	QueryParams.bReturnFaceIndex = true; //for precisise collsion 
+
+	bool bHit = GetWorld()->LineTraceSingleByChannel(HitResult, StartTrace, EndTrace, ECC_Visibility, QueryParams); 
+
+
+
+	 DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Red, false, 10.0f, 0, 1.0f);
+
+	if(bHit)
+	{
+		   // Draw debug line for hit
+    
+
+        DebugMessage("Line Trace Hit Detected!");
+
+		 AActor* HitActor = HitResult.GetActor();
+        if (HitActor)
+        {
+            DebugMessage(FString::Printf(TEXT("Hit Actor: %s"), *HitActor->GetName()));
+
+			DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 18.0f, 12, FColor::Green, false, 10.0f);
+
+            // Example: Apply damage
+           UGameplayStatics::ApplyDamage(HitActor, WeaponDamage, GetController(), this, UDamageType::StaticClass());
+        }
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
