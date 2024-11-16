@@ -57,7 +57,7 @@ AEngineer::AEngineer()
     PlayerName = FString("Engineer");
     WeaponRange = 20000.0f;
     ProjectileDamage = 40.0f;
-    WeaponDamage = 20.0f;
+    WeaponDamage = 10.0f;
     WeaponFireRate = 0.1f;
     ProjectileFireRate = 1.0f;
     WeaponDelayDuration = WeaponFireRate;
@@ -239,7 +239,7 @@ void AEngineer::Fire()
         {
             DebugMessage(FString::Printf(TEXT("Hit Actor: %s"), *HitActor->GetName()));
             DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 18.0f, 12, FColor::Green, false, 10.0f);
-            UGameplayStatics::ApplyDamage(HitActor, WeaponDamage, GetController(), this, UDamageType::StaticClass());
+            UGameplayStatics::ApplyDamage(HitActor, WeaponDamage, GetController(), this, DamageType);
         }
     }
 }

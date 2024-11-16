@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "DefaultGameMode.h"
 #include "GameFramework/Pawn.h"
 #include "Components/StaticMeshComponent.h"
 #include "InputAction.h"
@@ -25,11 +26,13 @@
 #include "GameFramework/FloatingPawnMovement.h"
 #include "EnhancedInputSubsystems.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
+#include "GameFramework/DamageType.h"
 #include "Materials/MaterialInterface.h"
-#include "DefaultGameMode.h"
 #include "Sound/SoundBase.h"
 #include "Components/SceneComponent.h"
 #include "Engineer.generated.h"
+
+class ADefaultGameMode; 
 
 UCLASS()
 class WOLJAWHACKATHON_API AEngineer : public APawn
@@ -200,6 +203,11 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void CollectHeartFragment(); 
+
+    UPROPERTY(EditDefaultsOnly)
+    TSubclassOf<UDamageType> DamageType;
+
+    
 
 
     

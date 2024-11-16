@@ -162,3 +162,16 @@ void AEnemyA::OnDetectionEndOverlap(UPrimitiveComponent* OverlappedComponent, AA
         TargetActor = nullptr; // Clear the target if it leaves the detection radius
     }
 }
+
+
+float AEnemyA::TakeDamage(float DamageAmount,  struct FDamageEvent const & DamageEvent,  class AController * EventInstigator,  AActor * DamageCauser)
+{
+
+	CurrentHealth -= DamageAmount; 
+
+	if(CurrentHealth <= 0)
+	{
+		Destroy();
+	}
+	return DamageAmount; 
+}
