@@ -12,7 +12,10 @@
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Player/Actions/IA_StopFireProjectile.uasset",
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Levels/Level0.umap",
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/GameModes/BP_DefaultGameMode.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Projectile/BP_Projectile.uasset"
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Projectile/BP_Projectile.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Placeholders/TurretBase.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Placeholders/TurretGun.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Enemies/BP_EnemyA.uasset"
 			]
 		}
 	]

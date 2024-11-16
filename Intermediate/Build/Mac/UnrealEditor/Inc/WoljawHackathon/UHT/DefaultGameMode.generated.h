@@ -15,7 +15,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define WOLJAWHACKATHON_DefaultGameMode_generated_h
 
 #define FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execHandleMatchEnd);
+	DECLARE_FUNCTION(execDecreaseMatchTime); \
+	DECLARE_FUNCTION(execHandleMatchEnd); \
+	DECLARE_FUNCTION(execCollectHeartFragment);
 
 
 #define FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_DefaultGameMode_h_15_INCLASS_NO_PURE_DECLS \
