@@ -1,5 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+// Engineer.h
 #pragma once
 
 #include "CoreMinimal.h"
@@ -30,230 +29,177 @@
 UCLASS()
 class WOLJAWHACKATHON_API AEngineer : public APawn
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
+private:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* MoveAction;
 
-	//When pressed  weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* MoveAction; 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* LookAction;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* LookAction; 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* JumpAction;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* JumpAction; 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* StartFireAction;
 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* StopFireAction;
 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* ReloadAction;
 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* StartFireProjectileAction;
 
-	//When pressed  weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StartFireAction; 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* StopFireProjectileAction;
 
-	//When released weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StopFireAction; 
-
-	//When pressed firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* ReloadAction; 
-
-	//When pressed  weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StartFireProjectileAction; 
-
-	//When released weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StopFireProjectileAction; 
-
-	//When pressed reload action happen for projectiles
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* ReloadProjectileAction; 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputAction* ReloadProjectileAction;
 
 public:
-	// Sets default values for this pawn's properties
-	AEngineer();
+    AEngineer();
 
-	// Player properties
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
-	float CurrentHealth;
+    // Components
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+    USceneComponent* MainComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
-	FString PlayerName;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+    UCapsuleComponent* MainCapsule;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
-	float MaxHealth;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+    UCapsuleComponent* SecondaryCapsule;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
-	float CurrentShield;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+    UStaticMeshComponent* PrimaryMesh;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
-	float MaxShield;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+    UStaticMeshComponent* SecondaryMesh;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components",meta = (AllowPrivateAccess = "true"))
+    UCameraComponent* PlayerCamera;
 
-	// Player components
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UStaticMeshComponent* PrimaryMesh;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))
+    USpringArmComponent* SpringArmComponent;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UStaticMeshComponent* SecondaryMesh;
+    // Player Properties
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+    float CurrentHealth;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UCameraComponent* PlayerCamera;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+    FString PlayerName;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	USpringArmComponent* SpringArmComponent;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+    float MaxHealth;
 
-	
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+    float CurrentShield;
 
-	// Weapon properties
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float WeaponRange;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+    float MaxShield;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float WeaponDamage;
+    // Movement and Rotation Properties
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement Properties")
+    float RotationSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float ProjectileDamage;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement Properties")
+    float TurnSmoothness;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float WeaponFireRate;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement Properties")
+    bool bSmoothRotation;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float ProjectileFireRate;
+    // Target rotation for smooth interpolation
+    FRotator TargetRotation;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float WeaponDelayDuration;
+    // Weapon Properties
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float WeaponRange;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	float ProjectileDelayDuration;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float WeaponDamage;
 
-	// Sound properties
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	USoundBase* WeaponFireSound;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float ProjectileDamage;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	USoundBase* ProjectileFireSound;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float WeaponFireRate;
 
-	// Muzzle flash offsets
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	USceneComponent* WeaponMuzzleFlashOffset;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float ProjectileFireRate;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	USceneComponent* ProjectileMuzzleFlashOffset;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float WeaponDelayDuration;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	USceneComponent* ProjectileSpawnLocation;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    float ProjectileDelayDuration;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UCapsuleComponent* MainComponent;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    bool bIsAutomatic;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UCapsuleComponent* MainCapsule;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    bool bIsReloading;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    int32 CurrentAmmo;
 
-UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UCapsuleComponent* SecondaryCapsule;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
+    int32 MaxAmmo;
 
+    // Weapon Components
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Components")
+    USceneComponent* WeaponMuzzleFlashOffset;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Components")
+    USceneComponent* ProjectileMuzzleFlashOffset;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Components")
+    USceneComponent* ProjectileSpawnLocation;
 
+    // Sound Properties
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound Properties")
+    USoundBase* WeaponFireSound;
 
-	// Weapon mode
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	bool bIsAutomatic;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound Properties")
+    USoundBase* ProjectileFireSound;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	bool bIsReloading; 
+    // Timer Handles
+    FTimerHandle WeaponFireRateTimerHandle;
+    FTimerHandle ProjectileFireRateTimerHandle;
+    FTimerHandle WeaponReloadingTimerHandle;
+    FTimerHandle ProjectileReloadingTimerHandle;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	int32 CurrentAmmo;
+    // HUD Properties
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HUD")
+    TSubclassOf<class UUserWidget> UMG_PlayerHUD;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
-	int32 MaxAmmo;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HUD")
+    UUserWidget* HUD;
 
+    // Functions
+    UFUNCTION(BlueprintCallable)
+    void DisplayPlayerHUD();
 
+    UFUNCTION(BlueprintCallable)
+    void StartFire();
 
-	//Weapon Timer Handle for robots 
-	FTimerHandle WeaponFireRateTimerHandle; 
-	//Projectile Timer Handle for projectiles
-	FTimerHandle ProjectileFireRateTimerHandle; 
+    UFUNCTION(BlueprintCallable)
+    void Fire();
 
-	//Weapon reloading Timer Handle for robots  
-	FTimerHandle WeaponReloadingTimerHandle; 
-	//Projectile Timer Handle for when projectiles is reloading
-	FTimerHandle ProjectileReloadingTimerHandle; 
-
-	//Reference to the HUD class that the player will see 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	TSubclassOf<class UUserWidget> UMG_PlayerHUD; 
-
-		//Reference to HUD that the player will see 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
-	UUserWidget* HUD; 
-
-public: 
-
-UFUNCTION(BlueprintCallable)
-	void DisplayPlayerHUD(); 
-
-
-
-//Firing Functions
-UFUNCTION(BlueprintCallable)
-	void StartFire(); 
-
-
-UFUNCTION(BlueprintCallable)
-	void Fire(); 
-
-UFUNCTION(BlueprintCallable)
-	void StopFire(); 
-
-
-
-
-
-
-
-
-
-
-
+    UFUNCTION(BlueprintCallable)
+    void StopFire();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+    virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputMappingContext* InputMappingContext; 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+    UInputMappingContext* InputMappingContext;
 
-	void Move(const FInputActionValue& Value); 
-	void Look(const FInputActionValue& Value); 
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
+    void Move(const FInputActionValue& Value);
+    void Look(const FInputActionValue& Value);
 
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    virtual void Tick(float DeltaTime) override;
+    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 };
