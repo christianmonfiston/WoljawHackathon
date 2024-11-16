@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\WoljawHackathon.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\WoljawHackathon.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\WoljawHackathonEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\WoljawHackathon">
+      <UniqueIdentifier>{1CF9F76F-AB70-375E-A550-55E2D1CB08CB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\WoljawHackathon\WoljawHackathon.Build.cs">
+      <Filter>Source\WoljawHackathon</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\WoljawHackathon\WoljawHackathon.cpp">
+      <Filter>Source\WoljawHackathon</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\WoljawHackathon\WoljawHackathon.h">
+      <Filter>Source\WoljawHackathon</Filter>
+    </ClInclude>
+    <Filter Include="Source\WoljawHackathon\Private">
+      <UniqueIdentifier>{FB3787A8-511B-3A6C-85C9-2D9058B4E76A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\WoljawHackathon\Private\Engineer.cpp">
+      <Filter>Source\WoljawHackathon\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\WoljawHackathon\Public">
+      <UniqueIdentifier>{C8441B1F-FB9C-3D89-BA7C-4F3892D2BE3F}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\WoljawHackathon\Public\Engineer.h">
+      <Filter>Source\WoljawHackathon\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

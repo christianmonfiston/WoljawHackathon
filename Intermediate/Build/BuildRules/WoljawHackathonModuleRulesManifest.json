@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\chris\\OneDrive\\Documents\\Unreal Projects\\WoljawHackathon\\Source\\WoljawHackathon\\WoljawHackathon.Build.cs",
+		"C:\\Users\\chris\\OneDrive\\Documents\\Unreal Projects\\WoljawHackathon\\Source\\WoljawHackathon.Target.cs",
+		"C:\\Users\\chris\\OneDrive\\Documents\\Unreal Projects\\WoljawHackathon\\Source\\WoljawHackathonEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}
