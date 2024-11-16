@@ -12,10 +12,14 @@
 #include "Engine/TimerHandle.h"
 #include "NiagaraFunctionLibrary.h"
 #include "EnhancedInputComponent.h"
+#include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
+#include "Blueprint/UserWidget.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "CollisionQueryParams.h"
+#include "EnhancedInputSubsystems.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "Materials/MaterialInterface.h"
 #include "Sound/SoundBase.h"
@@ -26,6 +30,44 @@ UCLASS()
 class WOLJAWHACKATHON_API AEngineer : public APawn
 {
 	GENERATED_BODY()
+
+
+	//When pressed  weapon firing input action happen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* MoveAction; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* LookAction; 
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* JumpAction; 
+
+
+
+
+	//When pressed  weapon firing input action happen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* StartFireAction; 
+
+	//When released weapon firing input action happen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* StopFireAction; 
+
+	//When pressed firing input action happen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* ReloadAction; 
+
+	//When pressed  weapon firing input action happen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* StartFireProjectileAction; 
+
+	//When released weapon firing input action happen
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* StopFireProjectileAction; 
+
+	//When pressed reload action happen for projectiles
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
+	UInputAction* ReloadProjectileAction; 
 
 public:
 	// Sets default values for this pawn's properties
@@ -41,6 +83,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
 	float MaxHealth;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+	float CurrentShield;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Properties")
+	float MaxShield;
+
+
 	// Player components
 	UPROPERTY(EditAnywhere, Category = "Player Components")
 	UStaticMeshComponent* PrimaryMesh;
@@ -48,6 +97,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Player Components")
 	UStaticMeshComponent* SecondaryMesh;
 
+	UPROPERTY(EditAnywhere, Category = "Player Components")
+	UCameraComponent* PlayerCamera;
 	// Weapon properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
 	float WeaponRange;
@@ -109,6 +160,25 @@ public:
 	//Projectile Timer Handle for when projectiles is reloading
 	FTimerHandle ProjectileReloadingTimerHandle; 
 
+	//Reference to the HUD class that the player will see 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
+	TSubclassOf<class UUserWidget> UMG_PlayerHUD; 
+
+		//Reference to HUD that the player will see 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Components")
+	UUserWidget* HUD; 
+
+public: 
+
+UFUNCTION(BlueprintCallable)
+	void DisplayPlayerHUD(); 
+
+
+
+
+
+
+
 
 
 
@@ -116,29 +186,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	//When pressed  weapon firing input action happen
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StartFireAction; 
+	UInputMappingContext* InputMappingContext; 
 
-	//When released weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StopFireAction; 
+	void Move(const FInputActionValue& Value); 
+	void Look(const FInputActionValue& Value); 
 
-	//When pressed firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* ReloadAction; 
 
-	//When pressed  weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StartFireProjectileAction; 
 
-	//When released weapon firing input action happen
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* StopFireProjectileAction; 
 
-	//When pressed reload action happen for projectiles
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess="true"))
-	UInputAction* ReloadProjectileAction; 
 
 
 
