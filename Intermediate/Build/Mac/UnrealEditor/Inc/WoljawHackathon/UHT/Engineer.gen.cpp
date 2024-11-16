@@ -24,6 +24,7 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_WoljawHackathon();
 WOLJAWHACKATHON_API UClass* Z_Construct_UClass_AEngineer();
 WOLJAWHACKATHON_API UClass* Z_Construct_UClass_AEngineer_NoRegister();
+WOLJAWHACKATHON_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 // End Cross Module References
 
 // Begin Class AEngineer Function DisplayPlayerHUD
@@ -429,6 +430,10 @@ struct Z_Construct_UClass_AEngineer_Statics
 		{ "Category", "Weapon Properties" },
 		{ "ModuleRelativePath", "Public/Engineer.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[] = {
+		{ "Category", "Projectile" },
+		{ "ModuleRelativePath", "Public/Engineer.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bIsAutomatic_MetaData[] = {
 		{ "Category", "Weapon Properties" },
 		{ "ModuleRelativePath", "Public/Engineer.h" },
@@ -533,6 +538,7 @@ struct Z_Construct_UClass_AEngineer_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ProjectileFireRate;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_WeaponDelayDuration;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_ProjectileDelayDuration;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ProjectileClass;
 	static void NewProp_bIsAutomatic_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsAutomatic;
 	static void NewProp_bIsReloading_SetBit(void* Obj);
@@ -599,6 +605,7 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Stati
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileFireRate = { "ProjectileFireRate", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileFireRate), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileFireRate_MetaData), NewProp_ProjectileFireRate_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponDelayDuration = { "WeaponDelayDuration", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, WeaponDelayDuration), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WeaponDelayDuration_MetaData), NewProp_WeaponDelayDuration_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileDelayDuration = { "ProjectileDelayDuration", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileDelayDuration), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileDelayDuration_MetaData), NewProp_ProjectileDelayDuration_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileClass = { "ProjectileClass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEngineer, ProjectileClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AProjectile_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileClass_MetaData), NewProp_ProjectileClass_MetaData) };
 void Z_Construct_UClass_AEngineer_Statics::NewProp_bIsAutomatic_SetBit(void* Obj)
 {
 	((AEngineer*)Obj)->bIsAutomatic = 1;
@@ -651,6 +658,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEngineer
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileFireRate,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_WeaponDelayDuration,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileDelayDuration,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_ProjectileClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_bIsAutomatic,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_bIsReloading,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEngineer_Statics::NewProp_CurrentAmmo,
@@ -705,10 +713,10 @@ AEngineer::~AEngineer() {}
 struct Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 2867320085U) },
+		{ Z_Construct_UClass_AEngineer, AEngineer::StaticClass, TEXT("AEngineer"), &Z_Registration_Info_UClass_AEngineer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEngineer), 212417758U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_2752710811(TEXT("/Script/WoljawHackathon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_1784785204(TEXT("/Script/WoljawHackathon"),
 	Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_Engineer_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -10,12 +10,15 @@
 #include "NiagaraSystem.h"
 #include "Engine/TimerHandle.h"
 #include "NiagaraFunctionLibrary.h"
+#include "GameFramework/PlayerController.h"
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "DrawDebugHelpers.h"
 #include "Blueprint/UserWidget.h"
+#include "Projectile.h"
+#include "Camera/PlayerCameraManager.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "CollisionQueryParams.h"
 #include "GameFramework/FloatingPawnMovement.h"
@@ -134,6 +137,9 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
     float ProjectileDelayDuration;
+
+    UPROPERTY(EditAnywhere, Category=Projectile)
+	TSubclassOf<class AProjectile> ProjectileClass;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Properties")
     bool bIsAutomatic;
