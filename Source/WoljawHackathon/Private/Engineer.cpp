@@ -31,7 +31,7 @@ AEngineer::AEngineer()
     SecondaryMesh->SetupAttachment(SecondaryCapsule);
 
     WeaponMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleFlash Offset"));
-    WeaponMuzzleFlashOffset->SetupAttachment(MainCapsule);
+    WeaponMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
 
     ProjectileMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Muzzle Flash"));
     ProjectileMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
@@ -90,22 +90,22 @@ void AEngineer::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 
     // Handle smooth rotation in tick
-    if (bSmoothRotation && !FMath::IsNearlyEqual(
-        PrimaryMesh->GetComponentRotation().Yaw,
-        TargetRotation.Yaw,
-        0.1f))
-    {
-        FRotator CurrentRotation = PrimaryMesh->GetComponentRotation();
-        FRotator NewRotation = FMath::RInterpTo(
-            CurrentRotation,
-            TargetRotation,
-            DeltaTime,
-            TurnSmoothness
-        );
+   // if (bSmoothRotation && !FMath::IsNearlyEqual(
+   //     PrimaryMesh->GetComponentRotation().Yaw,
+   //     TargetRotation.Yaw,
+   //     0.1f))
+  //  {
+  ////      FRotator CurrentRotation = PrimaryMesh->GetComponentRotation();
+  //      FRotator NewRotation = FMath::RInterpTo(
+  //          CurrentRotation,
+  //          TargetRotation,
+  //          DeltaTime,
+  //          TurnSmoothness
+  //      );
         
-        PrimaryMesh->SetWorldRotation(NewRotation);
-        SecondaryMesh->SetWorldRotation(NewRotation);
-    }
+    ///    PrimaryMesh->SetWorldRotation(NewRotation);
+   //     SecondaryMesh->SetWorldRotation(NewRotation);
+   // }
 }
 
 void AEngineer::DisplayPlayerHUD()
@@ -163,28 +163,28 @@ void AEngineer::Look(const FInputActionValue& Value)
                 TurnSmoothness
             );
             
-            // Apply the rotation to both meshes
-            PrimaryMesh->SetWorldRotation(NewRotation);
-            SecondaryMesh->SetWorldRotation(NewRotation);
+            
+           //PrimaryMesh->SetWorldRotation(NewRotation);
+           //SecondaryMesh->SetWorldRotation(NewRotation);
 
-			//Apply ROtation To Muzzle Off Fire and Projectile
+			
 
-			WeaponMuzzleFlashOffset->SetWorldRotation(PrimaryMesh->GetComponentRotation()); 
-			WeaponMuzzleFlashOffset->SetWorldLocation(PrimaryMesh->GetComponentLocation()); 
+			//WeaponMuzzleFlashOffset->SetWorldRotation(PrimaryMesh->GetComponentRotation()); 
+			//WeaponMuzzleFlashOffset->SetWorldLocation(PrimaryMesh->GetComponentLocation()); 
 
 
         }
         else
         {
-            // Instant rotation
-            FRotator NewRotation = FRotator(0.0f, ControllerRotation.Yaw, 0.0f);
-            PrimaryMesh->SetWorldRotation(NewRotation);
-            SecondaryMesh->SetWorldRotation(NewRotation);
+            
+           // FRotator NewRotation = FRotator(0.0f, ControllerRotation.Yaw, 0.0f);
+           // PrimaryMesh->SetWorldRotation(NewRotation);
+           // SecondaryMesh->SetWorldRotation(NewRotation);
 
             ///
 
-			WeaponMuzzleFlashOffset->SetWorldRotation(PrimaryMesh->GetComponentRotation()); 
-			WeaponMuzzleFlashOffset->SetWorldLocation(PrimaryMesh->GetComponentLocation()); 
+			//WeaponMuzzleFlashOffset->SetWorldRotation(PrimaryMesh->GetComponentRotation()); 
+			//WeaponMuzzleFlashOffset->SetWorldLocation(PrimaryMesh->GetComponentLocation()); 
 
         }
     }
