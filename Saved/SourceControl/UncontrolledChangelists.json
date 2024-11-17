@@ -5,8 +5,23 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Player/BP_Engineer.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/GameModes/BP_DefaultGameMode.uasset"
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/BP_Engineer.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/E/6A/EID8LU2USNO035K3EAZWUO.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Levels/Level0.umap",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/GameModes/BP_DefaultGameMode.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Base_Normal.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Base_BaseColor.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Base_OcclusionRoughnessMetallic.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Light_BaseColor.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Light_Emissive.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Light_Normal.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Light_OcclusionRoughnessMetallic.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Metal_BaseColor.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Metal_Normal.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/robot_low_Metal_OcclusionRoughnessMetallic.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/M_LowBase.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/M_LightRobot.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Robot/Texture/M_LowMetal.uasset"
 			]
 		}
 	]

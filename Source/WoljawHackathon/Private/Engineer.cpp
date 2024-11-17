@@ -36,15 +36,15 @@ AEngineer::AEngineer()
     ProjectileMuzzleFlashOffset = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Muzzle Flash"));
     ProjectileMuzzleFlashOffset->SetupAttachment(PrimaryMesh);
 
-    SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm Component"));
-    SpringArmComponent->SetupAttachment(PrimaryMesh);
-    SpringArmComponent->TargetArmLength = 300.0f;
-    SpringArmComponent->bEnableCameraLag = true;
-    SpringArmComponent->CameraLagSpeed = 3.0f;
+    //SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm Component"));
+    //SpringArmComponent->SetupAttachment(PrimaryMesh);
+    //SpringArmComponent->TargetArmLength = 300.0f;
+    //SpringArmComponent->bEnableCameraLag = true;
+    //SpringArmComponent->CameraLagSpeed = 3.0f;
 
-    PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
-    PlayerCamera->SetupAttachment(SpringArmComponent);
-    PlayerCamera->bUsePawnControlRotation = true;
+    //PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
+    //PlayerCamera->SetupAttachment(SpringArmComponent);
+   // PlayerCamera->bUsePawnControlRotation = true;
 
     ProjectileSpawnLocation = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Location"));
     ProjectileSpawnLocation->SetupAttachment(PrimaryMesh);
@@ -129,8 +129,8 @@ void AEngineer::Move(const FInputActionValue& Value)
         const FRotator Rotation = Controller->GetControlRotation();
         const FRotator YawRotation(0, Rotation.Yaw, 0);
 
-        const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
-        const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+        const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X) * 1;
+        const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y) * 1;
 
         AddMovementInput(ForwardDirection, MovementVector.Y);
         AddMovementInput(RightDirection, MovementVector.X);
@@ -268,7 +268,7 @@ void AEngineer::FireProjectile()
 		if (World != nullptr)
 		{
 			//APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
-			const FRotator SpawnRotation = PlayerCamera->GetComponentRotation();
+			const FRotator SpawnRotation = ProjectileMuzzleFlashOffset->GetComponentRotation();
 			// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
 			const FVector SpawnLocation = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(ProjectileMuzzleFlashOffset->GetComponentLocation());
 	
