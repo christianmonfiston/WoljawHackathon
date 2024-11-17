@@ -172,6 +172,8 @@ float AEnemyA::TakeDamage(float DamageAmount,  struct FDamageEvent const & Damag
 	if(CurrentHealth <= 0)
 	{
 		Destroy();
+
+		
 	}
 	return DamageAmount; 
 }
