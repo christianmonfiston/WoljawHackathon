@@ -28,7 +28,14 @@
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Material_001.uasset",
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Metal.uasset",
 				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/levelfix.uasset",
-				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Levels/Level1.umap"
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Levels/Level1.umap",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Enemies/BP_EnemyA.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/UI/WBP_HUD.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/T_Shield.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/T_HealthIcon.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/UI/Enemy.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Blueprints/Projectile/BP_Projectile.uasset",
+				"/Users/christianoliviermonfiston/Desktop/WoljawGame/Wolfjaw/WoljawHackathon/Content/Art/Projectile/Mesh/M_ProjectileLight.uasset"
 			]
 		}
 	]

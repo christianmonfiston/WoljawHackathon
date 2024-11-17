@@ -37,13 +37,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	/** called when projectile hits something */
+
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
-	/** Returns CollisionComp subobject **/
+	
 	UCapsuleComponent* GetPrimaryCapsule() const { return PrimaryCapsule; }
-	/** Returns ProjectileMovement subobject **/
+	
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
 
 };

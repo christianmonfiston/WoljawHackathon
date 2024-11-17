@@ -217,25 +217,13 @@ struct Z_Construct_UClass_AEnemyA_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TurretGun_MetaData[] = {
 		{ "Category", "Turret Components" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Rotating gun component of the turret */" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Rotating gun component of the turret" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DetectionRange_MetaData[] = {
 		{ "Category", "Detection" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Detection range component */" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Detection range component" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpawnPoint_MetaData[] = {
 		{ "Category", "Detection" },
@@ -244,33 +232,15 @@ struct Z_Construct_UClass_AEnemyA_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[] = {
 		{ "Category", "Combat" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Sound to play when firing */" },
-#endif
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Sound to play when firing" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[] = {
 		{ "Category", "Combat" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Projectile class to spawn when firing */" },
-#endif
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Projectile class to spawn when firing" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DetectionRadius_MetaData[] = {
 		{ "Category", "Detection" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Radius of the detection sphere */" },
-#endif
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Radius of the detection sphere" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MaxHealth_MetaData[] = {
 		{ "Category", "Detection" },
@@ -282,23 +252,11 @@ struct Z_Construct_UClass_AEnemyA_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FireRate_MetaData[] = {
 		{ "Category", "Combat" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Rate of fire for the turret (seconds) */" },
-#endif
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Rate of fire for the turret (seconds)" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GunRotationSpeed_MetaData[] = {
 		{ "Category", "Turret" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/** Speed at which the gun rotates to face the target (degrees per second) */" },
-#endif
 		{ "ModuleRelativePath", "Public/EnemyA.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Speed at which the gun rotates to face the target (degrees per second)" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TurretBase;
@@ -389,10 +347,10 @@ AEnemyA::~AEnemyA() {}
 struct Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_EnemyA_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyA, AEnemyA::StaticClass, TEXT("AEnemyA"), &Z_Registration_Info_UClass_AEnemyA, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyA), 2113348063U) },
+		{ Z_Construct_UClass_AEnemyA, AEnemyA::StaticClass, TEXT("AEnemyA"), &Z_Registration_Info_UClass_AEnemyA, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyA), 736190882U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_EnemyA_h_1860398939(TEXT("/Script/WoljawHackathon"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_EnemyA_h_271775161(TEXT("/Script/WoljawHackathon"),
 	Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_EnemyA_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_christianoliviermonfiston_Desktop_WoljawGame_Wolfjaw_WoljawHackathon_Source_WoljawHackathon_Public_EnemyA_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

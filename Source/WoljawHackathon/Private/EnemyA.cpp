@@ -43,7 +43,7 @@ void AEnemyA::BeginPlay()
 
     DetectionRange->OnComponentBeginOverlap.AddDynamic(this, &AEnemyA::OnDetectionBeginOverlap);
     DetectionRange->OnComponentEndOverlap.AddDynamic(this, &AEnemyA::OnDetectionEndOverlap);
-	DrawDebugSphere(GetWorld(), GetActorLocation(), DetectionRadius, 12, FColor::Green, true, 10.0f);
+	///DrawDebugSphere(GetWorld(), GetActorLocation(), DetectionRadius, 12, FColor::Green, true, 10.0f);
 
 
     GetWorld()->GetTimerManager().SetTimer(FireTimerHandle, this, &AEnemyA::FireAtTarget, FireRate, true);
@@ -94,31 +94,31 @@ void AEnemyA::RotateTurret(float DeltaTime)
 {
     if (!TargetActor) return;
 
-    // Get the turret gun's current rotation
+
+
+   //cuurent rotaion of the turret
     FRotator CurrentRotation = TurretGun->GetComponentRotation();
 
-    // Calculate the direction vector to the target
+      //cuurent rotaion of the turret
     FVector DirectionToTarget = (TargetActor->GetActorLocation() - TurretGun->GetComponentLocation()).GetSafeNormal();
-
-    // Get the desired rotation for the turret gun to face the target
+    
     FRotator TargetRotation = DirectionToTarget.Rotation();
 
-    // Lock rotation to Yaw only (horizontal rotation)
+    
     TargetRotation.Pitch = 0.0f;
     TargetRotation.Roll = 0.0f;
 
-    // Interpolate smoothly to the target rotation
+  
     FRotator NewRotation = FMath::RInterpConstantTo(CurrentRotation, TargetRotation, DeltaTime, GunRotationSpeed);
 
-    // Apply the new rotation to the turret gun
     TurretGun->SetWorldRotation(NewRotation);
 
 	FVector StartLocation = TurretGun->GetComponentLocation();
     FVector EndLocation = StartLocation + DirectionToTarget * 500.0f;  
 
 
-	DrawDebugLine(GetWorld(), StartLocation, EndLocation, FColor::Red, false, 0.1f, 0, 2.0f);
-	DrawDebugSphere(GetWorld(), TargetActor->GetActorLocation(), 50.0f, 12, FColor::Green, false, 0.1f, 0, 2.0f);
+	//DrawDebugLine(GetWorld(), StartLocation, EndLocation, FColor::Red, false, 0.1f, 0, 2.0f);
+	//DrawDebugSphere(GetWorld(), TargetActor->GetActorLocation(), 50.0f, 12, FColor::Green, false, 0.1f, 0, 2.0f);
 
 
 }
@@ -173,7 +173,7 @@ float AEnemyA::TakeDamage(float DamageAmount,  struct FDamageEvent const & Damag
 	{
 		Destroy();
 
-		
+
 	}
 	return DamageAmount; 
 }

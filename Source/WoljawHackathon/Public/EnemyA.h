@@ -29,26 +29,25 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret Components")
     UStaticMeshComponent* TurretBase;
 
-    /** Rotating gun component of the turret */
+   
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret Components")
     UStaticMeshComponent* TurretGun;
 
-    /** Detection range component */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Detection")
     USphereComponent* DetectionRange;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Detection")
     USceneComponent* SpawnPoint;
 
-    /** Sound to play when firing */
+ 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     USoundBase* FireSound;
 
-    /** Projectile class to spawn when firing */
+  
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     TSubclassOf<class AProjectile> ProjectileClass;
 
-    /** Radius of the detection sphere */
+    
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Detection")
     float DetectionRadius;
 
@@ -58,11 +57,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Detection")
     float CurrentHealth;
 
-    /** Rate of fire for the turret (seconds) */
+   
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
     float FireRate;
 
-    /** Speed at which the gun rotates to face the target (degrees per second) */
+ 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret")
     float GunRotationSpeed;
 

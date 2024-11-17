@@ -268,16 +268,16 @@ void AEngineer::FireProjectile()
 		if (World != nullptr)
 		{
 			//APlayerController* PlayerController = Cast<APlayerController>(Character->GetController());
-			const FRotator SpawnRotation = ProjectileMuzzleFlashOffset->GetComponentRotation();
+			//const FRotator SpawnRotation = ProjectileMuzzleFlashOffset->GetComponentRotation();
 			// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-			const FVector SpawnLocation = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(ProjectileMuzzleFlashOffset->GetComponentLocation());
+			//const FVector SpawnLocation = GetOwner()->GetActorLocation() + SpawnRotation.RotateVector(ProjectileMuzzleFlashOffset->GetComponentLocation());
 	
 			//Set Spawn Collision Handling Override
 			FActorSpawnParameters ActorSpawnParams;
 			ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 	
 			// Spawn the projectile at the muzzle
-			World->SpawnActor<AProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+			World->SpawnActor<AProjectile>(ProjectileClass, ProjectileSpawnLocation->GetComponentLocation(), ProjectileSpawnLocation->GetComponentRotation(), ActorSpawnParams);
 		}
 	}
 
